@@ -33,7 +33,7 @@ JAVASCRIPT
 
 for tag in `git tag`
 do
-  git checkout $tag
+  git reset --hard $tag
   prepare_reset
   mrt deploy meteor-book-$tag.meteor.com
 done

@@ -26,7 +26,7 @@ JAVASCRIPT
     
     cat >> $RESET <<JAVASCRIPT
       
-      }, 1000); // every day
+      }, 24 * 3600 * 1000); // every day
 JAVASCRIPT
     
     cat $RESET
@@ -39,5 +39,6 @@ do
   git reset --hard $tag
   prepare_reset
   echo "$PASSWORD
+$PASSWORD
 $PASSWORD" | mrt deploy $NAME-$tag -P
 done

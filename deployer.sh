@@ -36,7 +36,10 @@ JAVASCRIPT
 cd $DIR
 for tag in `git tag`
 do
-  git reset --hard $tag
+  # checkout $tag and only $tag
+  git checkout --force $tag
+  git clean -f -d
+  
   prepare_reset
   echo "$PASSWORD
 $PASSWORD
